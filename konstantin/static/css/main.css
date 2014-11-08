@@ -1,0 +1,133 @@
+@font-face {
+	font-family: Roboto-Light;
+	src: url(../fonts/roboto/Roboto-Light.ttf); 
+}
+
+* {
+	margin: 0;
+}
+
+body {
+	/* Background Gradient for different browsers */
+	background: #466368;
+	background: linear-gradient(#648880, #293f50);	
+	/* end */
+	height: 100%;
+
+}
+
+.background-image {
+	z-index: -1;
+	position: absolute;
+	width: 30%;
+	height: 100%;	
+	background-image: url('../img/computer_stock_2.png');
+	opacity: 0.25;
+	border-right: 1px dotted #ddd;
+}
+
+.buttons {
+	margin-top: -5px;
+	padding-left: 20px;
+}
+
+.btn.btn-small.btn-default {
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: #222;
+	border: 0px;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	color: #ddd;
+	height: 30px;
+	width: 125px;
+	padding-top: 5px;
+}
+
+.btn.btn-small.btn-default:hover {
+	box-shadow: inset 0px 0px 2px 1px #111;
+	//box-shadow: 0px 0px 2px 1px #383838;
+	//background-color: #293f50;
+}
+
+.container > div {
+	color: #ddd;
+	height: 100%;
+}
+
+#construction {
+	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	border: 2px solid #666;
+/*
+	border-top: 2px dotted #666;
+	border-bottom: 2px dotted #666;
+	border-left: 2px solid #999;
+	border-right: 2px solid #999;
+*/
+	width: 75%;
+	border-radius: 4px;
+	background-color: #ddd;
+	color: #333;
+	-moz-box-shadow: 0px 0px 0px 25px #fff;
+	-webkit-box-shadow: 0px 0px 0px 25px #fff;
+	box-shadow: 0px 5px 5px 1px #222;
+	opacity: 0.75;
+}
+
+#footer-copyright {
+	padding-left:2%;
+	border-left: 1px solid white;
+	height:100%;
+	font-family: Roboto-Light;
+}
+
+#footer {
+	color: #ffffff;
+	padding-top: 10px; 
+	padding-bottom: 1%;
+	padding-right: 1%;
+	font-family: Roboto-Light;
+	opacity: 0.8;
+}
+
+html {
+	//overflow: hidden;
+	height: 100%;
+}
+
+#intro-text {
+	-webkit-animation-duration: 2s;
+	-webkit-animation-delay: 5s;
+}
+
+.main-container {
+	min-height: 100%;
+	height: 100%;
+	padding: 20px;
+	font-family: Roboto-Light;
+}
+
+#main-info {
+	padding-left: 10%;
+	height: 100%;
+	min-height: 100%;
+}
+
+.push, #footer {
+	height: 3em;
+}
+
+#welcome {
+	font-size: 56px;
+	text-shadow: 0px 0px 15px 20px #222;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -3em;	
+}

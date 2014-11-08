@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<script src="{{ STATIC_URL }}js/jquery-2.1.1.min.js"></script>
+	<script src="{{ STATIC_URL }}lettering/jquery.lettering-0.6.1.min.js"></script>
+	<link rel="stylesheet" href="{{ STATIC_URL }}animate/animate.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/doodles.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" />
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<div class="background-image"></div>
+	<div class="wrapper">
+		<div class="main-container">
+			{% block content %}{% endblock %}
+		</div>
+	</div>
+	{% block doodle %}
+		<img class="bubble" src="{{ STATIC_URL }}img/doodles/speech_bubble_1.png" alt="" width=120px height=75px></img>
+		<img id="lilguy" src="{{ STATIC_URL }}img/doodles/lilguy_1.png" alt="" width=100px height=125px></img>
+	{% endblock %}
+	<div class="nav navbar-inverse" id="footer">
+		{% block footer %}{% endblock %}
+	</div>
+</body>

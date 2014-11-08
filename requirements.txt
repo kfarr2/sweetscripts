@@ -1,0 +1,14 @@
+Django==1.6.5
+Jinja2==2.7.3
+MarkupSafe==0.23
+PyMySQL==0.6.2
+South==1.0.1
+amqp==1.4.6
+anyjson==0.3.3
+billiard==3.3.0.18
+celery==3.1.16
+coverage==3.7.1
+kombu==3.0.23
+pytz==2014.9
+six==1.8.0
+urllib3==1.9.1
