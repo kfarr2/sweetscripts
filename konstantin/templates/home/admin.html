@@ -3,5 +3,15 @@
 {% block title %}Admin{% endblock %}
 
 {% block content %}
-<h3>Admin</h3>
+<div class="container">
+	<div class='well'>
+		<h1>Control Portal O' Doom</h1>
+	</div>
+	<div class='col-md-6'>
+		<ul>
+			<a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
+			<a href='#' class='btn btn-default btn-small'>Edit Project</a>
+		</ul>	
+	</div>
+</div>
 {% endblock %}

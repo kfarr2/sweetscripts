@@ -1,5 +1,3 @@
-{% load sickform %}
-
 <div class="form-group{% if field.errors %} has-error{% endif %}">
     {% if field|is_checkbox %}
         <div class="{{ classes.single_value }}">
@@ -12,7 +10,6 @@
                 {% for error in field.errors %}
                     <span class="help-block {{ field.error_css_class }}">{{ error }}</span>
                 {% endfor %}
-
                 {% if field.help_text %}
                     <p class="help-block">
                         {{ field.help_text|safe }}
@@ -61,7 +58,6 @@
                 <label id='check-all-{{ field.auto_id }}' class="check-all" onclick="$(this).parent().find('input').prop('checked', $(this).find('input').prop('checked'))"><input type="checkbox" value="check-all" /> Check all</label>
             {% endif %}
             {{ field }}
-
             {% if field.help_text %}
                 <p class="help-block">
                     {{ field.help_text|safe }}

@@ -2,40 +2,8 @@
 {% block title %}Konstantin Farrell{% endblock %}
 
 {% block content %}
-	<div class="container">
-		<div class="col-md-3">
-			<h1 id="welcome">Welcome!</h1>
-		</div>
-		<div class="col-md-8" id="main-info">
-			<div id="intro-text" class="animated bounceInRight"><h2>PROGRAMMING - WEB DEVELOPMENT</h2></div>
-		</div>
-		<br />
-		{% include "construction.html" %}
-
-	</div>
-{% endblock %}
-
-{% block footer %}
-	<div class="container">
-		<div class="col-md-9 buttons">
-			<a href="{% url 'home' %}" class="btn btn-small btn-default"><span class="glyphicon glyphicon-home"></span> Home</a>
-			<a id="about" href="#" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> About</a>
-			<ul class="dropdown-menu">
-				<li><a href="#">Who I Am</a></li>
-			</ul>
-			<a href="#" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> Stuff</a>
-			<a href="#" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> Contact</a>
-
-		</div>
-		<div class="col-md-3">
-			<span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span>
-		</div>
-	</div>
-
-	<script>
-		$(document).ready(function(e){
-			$('#about').hover($('dropdown-toggle').dropdown('toggle'));
-		});	
-	</script>
+<div class='center-vertical center-lg text-center'>
+	<div class='welcome animated fadeInUpBig'>Hi, I'm Konstantin.</div>
+</div>
 {% endblock %}
 

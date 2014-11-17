@@ -22,7 +22,7 @@ body {
 	width: 30%;
 	height: 100%;	
 	background-image: url('../img/computer_stock_2.png');
-	opacity: 0.25;
+	opacity: 0.9;
 	border-right: 1px dotted #ddd;
 }
 
@@ -32,6 +32,7 @@ body {
 }
 
 .btn.btn-small.btn-default {
+	margin-top: 1px;
 	margin-left: 20px;
 	margin-right: 20px;
 	background-color: #222;
@@ -46,8 +47,32 @@ body {
 
 .btn.btn-small.btn-default:hover {
 	box-shadow: inset 0px 0px 2px 1px #111;
+	opacity: 0.7;
 	//box-shadow: 0px 0px 2px 1px #383838;
 	//background-color: #293f50;
+}
+
+.center-sm {
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+}
+
+.center-lg {
+	margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+	-webkit-transform: translateX(50%);
+	-ms-transform: translateX(50%);
+	transform: translateX(50%);
+}
+
+.center-vertical {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .container > div {
@@ -85,6 +110,9 @@ body {
 }
 
 #footer {
+	width:100%;
+	overflow:hidden;
+	position:absolute;
 	color: #ffffff;
 	padding-top: 10px; 
 	padding-bottom: 1%;
@@ -94,8 +122,13 @@ body {
 }
 
 html {
-	//overflow: hidden;
+	overflow: hidden;
 	height: 100%;
+}
+
+hr {
+	color: #666666;
+	height: 1px;
 }
 
 #intro-text {
@@ -104,9 +137,11 @@ html {
 }
 
 .main-container {
+	position: absolute;
 	min-height: 100%;
 	height: 100%;
 	padding: 20px;
+	width: 100%;
 	font-family: Roboto-Light;
 }
 
@@ -116,13 +151,62 @@ html {
 	min-height: 100%;
 }
 
+.panel {
+	margin-top: 3em;
+	margin-bottom:20px;
+	background-color: inherit;
+	border:1px solid transparent;
+	border-radius:4px;
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-shadow:0 1px 1px rgba(0,0,0,.05)
+}
+
+.panel-body {
+	padding:15px
+}
+
+.panel-default {
+	background-color: #7C6C3B; 
+}
+
+.panel-heading {
+	opacity: 0.5;
+	padding:10px 15px;
+	border-bottom:1px solid transparent;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px
+}
+
+.project {	
+	min-height: 110px;
+	margin: 5px;
+}
+
+
 .push, #footer {
 	height: 3em;
 }
 
-#welcome {
+.screenshot {
+	margin: 5px;
+	padding: 1px;
+	border: 1px solid #222;
+}
+
+.screenshot:hover {
+	z-index: +1;
+	margin-top: 4px;
+	margin-right: 7px;
+}
+
+.welcome {
+	color: #ccc;
 	font-size: 56px;
 	text-shadow: 0px 0px 15px 20px #222;
+}
+
+.well > h1 {
+	color: #333;
 }
 
 .wrapper {

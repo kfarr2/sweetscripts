@@ -1,6 +1,6 @@
 
 .bubble {
-	//visibility: hidden;
+	visibility: hidden;
 	z-index: 1;
 	position: fixed;
 	right: 20px;

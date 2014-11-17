@@ -1,3 +1,4 @@
+import os, sys
 from django.contrib.auth.models import AbstractBaseUser, UserManager
 from django.db import models
 
@@ -14,3 +15,15 @@ class Admin(models.Model):
 	def get_full_name(self): return self.last_name + ", " + self.first_name
 	def get_short_name(self): return self.first_name + " " + self.last_name
 
+	USERNAME_FIELD = 'username'
+
+	objects = UserManager()
+
+class About(models.Model):
+	about_id = models.AutoField(primary_key=True)
+	content = models.TextField()
+	date_added = models.DateTimeField(auto_now_add=True)
+
+	class Meta:
+		db_table = "about"
+		ordering = ['date_added']

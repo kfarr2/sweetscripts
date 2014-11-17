@@ -1,0 +1,11 @@
+{{ formset.management_form }}
+
+{% for form in formset %}
+	{% if classes.label == 'sr_only' %}
+		<div class="form-inline">
+	{% endif %}
+	{% include "sickform/form.html" with form=form %}
+	{% if classes.label == 'sr_only' %}
+		</div>
+	{% endif %}
+{% endfor %}

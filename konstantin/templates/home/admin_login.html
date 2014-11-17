@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Admin Login{% endblock %}
-
+{% block head %}{% endblock %}
 {% block content %}
-	<div class="col-md-2 text-center">
+	<div class="text-center center-sm animated fadeInDown">
+		<h1>Welcome Back</h1>
+		<br />
 		<form method="post">
 			{% csrf_token %}
-			{{ form }}
+			{% include "_form.html" with form=form %}
 			<input class="btn btn-small btn-default" type="submit" value="Submit" />
 			<a class="btn btn-small btn-default" href="{% url 'home' %}">Cancel</a>
 		</form>
