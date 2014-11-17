@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{% if project_id %}Edit{% else %}Create{% endif %}{% endblock %}
+{% block head %}
+{{ form.media }}
+{% endblock%}
+{% block content %}
+	<div class='col-md-5'>
+		<div class='panel panel-default'>
+			<div class='panel-heading'><h2>{% if project_id %}Edit A Project{% else %}Create A New Project{% endif %}</h2></div>
+			<div class='panel-body'>
+				<form method='post'>
+					{% csrf_token %}
+					{% include '_field.html' with field=form.name %}
+					{% include '_field.html' with field=form.description %}
+					<div class='col-md-6'>
+						{% include '_field.html' with field=form.date_completed %}
+					</div>
+					<div class='col-md-6'>
+						{% include '_field.html' with field=form.team %}
+					</div>
+					{% include '_field.html' with field=form.site_url %}
+					{% include '_field.html' with field=form.screenshot %}
+					<div class='text-center'>
+						<input class='btn btn-small btn-default' type=submit value=Submit></input>
+						<a href='{% url 'admin' %}' class='btn btn-small btn-default'>Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

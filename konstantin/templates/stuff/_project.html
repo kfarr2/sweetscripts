@@ -1,0 +1,11 @@
+<div class="project">
+	<div class="col-md-3"><h4>{{ project.name|title }}</h4></div>
+	<div class="col-md-5">{{ project.description|truncatechars:255 }}</div>
+	<div class="col-md-2">Team: {{ project.team|upper }}</div>
+	<div class="col-md-2">
+		{% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
+			<img class='screenshot pull-right' src='{{ project.screenshot }}' alt='none' width=200px height=100px>
+		{% if project.site_url %}</a>{% endif %}
+	</div>
+
+</div>
