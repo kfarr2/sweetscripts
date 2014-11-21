@@ -25,7 +25,8 @@ body {
 .background-image {
 	z-index: -1;
 	position: absolute;
-	width: 30%;
+	overflow: hidden;
+    width: 30%;
 	height: 100%;	
 	background-image: url('../img/computer_stock_2.png');
 	opacity: 0.9;
