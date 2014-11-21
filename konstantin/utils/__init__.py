@@ -1,5 +1,8 @@
 from __future__ import print_function
 import datetime
+import sys
+
+
 from django import forms
 from django.forms.fields import Field
 from django.forms.models import BaseModelFormSet
@@ -17,6 +20,7 @@ from django.utils.six import add_metaclass
 
 from .forms import Form
 
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
@@ -24,6 +28,9 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+'''
+Old shit. Delete. Possibly.
 
 
 forms.Form.required_css_class = "required"
@@ -67,3 +74,5 @@ def dictfetchall(cursor):
 		dict(zip([col[0] for col in desc], row))
 		for row in cursor.fetchall()
 	]
+
+'''

@@ -34,14 +34,21 @@
 					<a href="#" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> Contact</a>
 
 				</div>
-				<div class="col-md-3">
-					<span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span>
-				</div>
 			</div>
 
 			<script>
 				$(document).ready(function(e){
 					$('#about').hover($('dropdown-toggle').dropdown('toggle'));
+					
+					if ($(window).width() > 600){
+						$('container').add(
+							'<div class="col-md-3"><span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span></div>'
+						);
+					} else {
+						if ($(window.contains('<div class="col-md-3"><span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span></div>'))){
+							alert("Contains!")	
+						}
+					}
 				});	
 			</script>
 		{% endblock %}

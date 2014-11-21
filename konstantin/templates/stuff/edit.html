@@ -4,10 +4,10 @@
 {{ form.media }}
 {% endblock%}
 {% block content %}
-	<div class='col-md-5'>
+	<div class='col-md-3'>
 		<div class='panel panel-default'>
 			<div class='panel-heading'><h2>{% if project_id %}Edit A Project{% else %}Create A New Project{% endif %}</h2></div>
-			<div class='panel-body'>
+			<div class='panel-body form-container'>
 				<form method='post'>
 					{% csrf_token %}
 					{% include '_field.html' with field=form.name %}
@@ -28,4 +28,10 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function(){
+			var height = $(document).height() - 100;
+			$('.panel-default').height(height);
+		});
+	</script>
 {% endblock %}

@@ -5,6 +5,10 @@
 
 * {
 	margin: 0;
+	padding: 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 body {
@@ -13,7 +17,9 @@ body {
 	background: linear-gradient(#648880, #293f50);	
 	/* end */
 	height: 100%;
-
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 .background-image {
@@ -112,7 +118,7 @@ body {
 #footer {
 	width:100%;
 	overflow:hidden;
-	position:absolute;
+	position:fixed;
 	color: #ffffff;
 	padding-top: 10px; 
 	padding-bottom: 1%;
@@ -121,9 +127,16 @@ body {
 	opacity: 0.8;
 }
 
+.form-container {
+	max-height: 80%;
+	overflow-y: scroll;
+}
+
 html {
 	overflow: hidden;
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 hr {
@@ -166,6 +179,7 @@ hr {
 }
 
 .panel-default {
+	overflow: hidden;
 	background-color: #7C6C3B; 
 }
 
