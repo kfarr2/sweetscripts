@@ -3,3 +3,4 @@ local.py
 .env
 .coverage
 __pycache__
+variables.py

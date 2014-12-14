@@ -88,8 +88,9 @@ body {
 }
 
 #construction {
-	margin-top: 150px;
-	margin-left: auto;
+    margin-bottom: auto;
+	margin-top: auto;
+    margin-left: auto;
 	margin-right: auto;
 	padding: 10px;
 	border: 2px solid #666;
@@ -129,8 +130,9 @@ body {
 }
 
 .form-container {
-	max-height: 80%;
-	overflow-y: scroll;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 html {
@@ -166,7 +168,7 @@ hr {
 }
 
 .panel {
-	margin-top: 3em;
+    margin-top: 3em;
 	margin-bottom:20px;
 	background-color: inherit;
 	border:1px solid transparent;
@@ -176,11 +178,14 @@ hr {
 }
 
 .panel-body {
-	padding:15px
+    padding:15px;
 }
 
 .panel-default {
-	overflow: hidden;
+    position: relative;
+	margin-top: auto;
+    margin-bottom: auto;
+    overflow-y: hidden;
 	background-color: #7C6C3B; 
 }
 
@@ -190,6 +195,12 @@ hr {
 	border-bottom:1px solid transparent;
 	border-top-left-radius:3px;
 	border-top-right-radius:3px
+}
+
+.panel-internal {
+    
+    position: relative;
+    overflow-y: scroll;
 }
 
 .project {	
