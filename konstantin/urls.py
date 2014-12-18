@@ -22,4 +22,5 @@ urlpatterns = patterns('',
 	url(r'^stuff/?$', stuff.list, name='stuff'),	
 	url(r'^stuff/admin/create/project/?$', stuff.create, name='stuff-create'),
 	url(r'^stuff/admin/(?P<project_id>\d+)/?$', stuff.edit, name='stuff-edit'),
+    url(r'^contact/?$', stuff.contact, name='contact'),
 )

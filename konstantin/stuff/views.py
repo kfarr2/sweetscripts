@@ -48,3 +48,10 @@ def _edit(request, project_id):
 		'form': form,
 	})	
 
+
+
+def contact(request):
+    
+    return render(request, 'stuff/contact.html', {
+        
+    })
