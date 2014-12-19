@@ -19,11 +19,26 @@ class Admin(models.Model):
 
 	objects = UserManager()
 
-class About(models.Model):
-	about_id = models.AutoField(primary_key=True)
-	content = models.TextField()
-	date_added = models.DateTimeField(auto_now_add=True)
 
-	class Meta:
-		db_table = "about"
-		ordering = ['date_added']
+class About(models.Model):
+    about_id = models.AutoField(primary_key=True)
+    content = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "about"
+        ordering = ['date_added']
+
+
+class Dummy(models.Model):
+    dummy_id = models.AutoField(primary_key=True)
+    name = models.TextField()
+    description = models.TextField()
+    tag = models.IntegerField()
+    age = models.TimeField()
+    created_by = models.ForeignKey(Admin)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "dummy"
+
