@@ -1,0 +1,7 @@
+{% for project in projects %}
+    {% include 'stuff/_project.html' %}
+{% empty %}
+<div class='project'>
+    <h4>No projects have been created yet.</h4>
+</div>
+{% endfor %}
