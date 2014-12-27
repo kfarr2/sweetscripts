@@ -28,9 +28,12 @@
 			</div>
 		</div>
 	</div>
+    <div class='col-md-6'>
+        {% include 'stuff/_projects.html' %}
+    </div>
 	<script>
 		$(document).ready(function(){
-			var height = $(document).height() - 100;
+			var height = $(document).height() - 180;
 			$('.panel-default').height(height);
 		});
 	</script>
