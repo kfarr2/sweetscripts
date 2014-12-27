@@ -50,7 +50,8 @@ INSTALLED_APPS = (
 	'bootstrap3_datetime',
 	'celery',
 	'coverage',
-	'konstantin.home',
+    'model_mommy',
+    'konstantin.home',
 	'konstantin.files',
 	'konstantin.utils',
 	'konstantin.utils.templatetags.sickform',
@@ -70,7 +71,12 @@ ROOT_URLCONF = 'konstantin.urls'
 
 WSGI_APPLICATION = 'konstantin.wsgi.application'
 
+PHANTOMJS_BINARY = ROOT('konstantin/static/bin/phantomjs')
+CAPTURE_SCRIPT_PATH = ROOT('konstantin/static/bin/capture.js')
 
+BROKER_URL = variable("BROKER_URL", 'amqp://guest:guest@localhost//')
+CELERY_ACKS_LATE = True
+CELERY_RESULTS_BACKEND = 'amqp'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -126,9 +132,9 @@ TEMPLATE_DIRS = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = ALLOWED_HOSTS + [".nip.io"]
-HOSTNAME = "10.0.0.10.nip.io:8000"
-SESSION_COOKIE_DOMAIN = '.nip.io'
+#ALLOWED_HOSTS = ALLOWED_HOSTS + [".nip.io"]
+#HOSTNAME = "10.0.0.10.nip.io:8000" # remember you got rid of the nip.io thing
+#SESSION_COOKIE_DOMAIN = '.nip.io'
 ADMINS = (
 # ('Your Name', 'your_email@example.com'),
 )
