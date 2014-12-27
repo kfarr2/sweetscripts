@@ -9,7 +9,3 @@ clean:
 	find -iname "*.pyc" -delete
 	find -iname "__pycache__" -delete
 
-# better migrate that shit
-migrate:
-    ./manage.py migrate
-
