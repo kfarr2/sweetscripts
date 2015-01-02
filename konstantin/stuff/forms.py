@@ -1,6 +1,5 @@
 from django import forms
 from django.forms import DateTimeField, ChoiceField, CharField, URLField
-from .tasks import get_screenshot
 from .models import Project, ProjectFile, Bio
 from bootstrap3_datetime.widgets import DateTimePicker
 
@@ -22,11 +21,10 @@ class ProjectForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProjectForm, self).__init__(*args, **kwargs)
         kwargs['project'] = kwargs.get("instance")
-    
+
+    #TODO: make this stop buggin' out
     def save(self, *args, **kwargs):
-        to_return = super(ProjectForm, self).save(*args, **kwargs)
-        to_return.screenshot = get_screenshot(self.cleaned_data['site_url']) 
-        return to_return
+        super(ProjectForm, self).save(*args, **kwargs)
 
 
 #TODO: write bio forms, contact forms, project forms, blag forms & more. 

@@ -6,7 +6,6 @@ from io import StringIO
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 from celery import shared_task
-from .models import Project
 
 @shared_task
 def get_screenshot(url):

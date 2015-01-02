@@ -135,7 +135,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 #ALLOWED_HOSTS = ALLOWED_HOSTS + [".nip.io"]
 #HOSTNAME = "10.0.0.10.nip.io:8000" # remember you got rid of the nip.io thing
-SESSION_COOKIE_DOMAIN = '.nip.io'
+#SESSION_COOKIE_DOMAIN = '.nip.io'
 ADMINS = (
 # ('Your Name', 'your_email@example.com'),
 )
