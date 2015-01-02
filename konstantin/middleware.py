@@ -12,6 +12,6 @@ from django.http import HttpResponse
 class ArduinoMiddleware:
     def process_response(self, request, response):
         connected = False
-        siri = serial.Serial("/dev/ttyACM0", 9600)
+        siri = serial.Serial("/dev/tty0", 9600)
         siri.write(str(response.status_code).encode())
         return HttpResponse(response)
