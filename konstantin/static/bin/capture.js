@@ -9,7 +9,8 @@ if(system.args !== null){
 }
 page.viewportSize = { width: 1000, height: 800 };
 page.open(address, function() {
-    page.render('page.png');
+    var name = 'img/' + address + '/page.png'
+    page.render(name);
     phantom.exit();
 });
 

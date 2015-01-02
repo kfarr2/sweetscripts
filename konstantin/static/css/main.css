@@ -87,6 +87,11 @@ body {
 	height: 100%;
 }
 
+.container > h1 {
+	color: #ddd;
+        font-size: 72px;
+}
+
 #construction {
     margin-bottom: auto;
 	margin-top: auto;

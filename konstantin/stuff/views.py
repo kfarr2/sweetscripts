@@ -48,7 +48,10 @@ def _edit(request, project_id):
 		'form': form,
 	})	
 
-
+def delete_project(request, project_id):
+    project = get_project_or_404(Project, pk=project_id)
+    project.delete()
+    return HttpResponseRedirect(reverse('stuff'))
 
 def contact(request):
     

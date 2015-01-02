@@ -10,4 +10,6 @@ def get_screenshot(url):
         url,
     ])
     print(result)
+    print(settings.PHANTOMJS_BINARY)
+    print(settings.CAPTURE_SCRIPT_PATH)
     return result

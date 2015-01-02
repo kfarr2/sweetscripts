@@ -45,27 +45,27 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'django.contrib.formtools',
-	'bootstrap3_datetime',
-	'celery',
-	'coverage',
+    'django.contrib.formtools',
+    'bootstrap3_datetime',
+    'celery',
+    'coverage',
     'model_mommy',
     'konstantin.home',
-	'konstantin.files',
-	'konstantin.utils',
-	'konstantin.utils.templatetags.sickform',
-	'konstantin.stuff',
+    'konstantin.files',
+    'konstantin.utils',
+    'konstantin.utils.templatetags.sickform',
+    'konstantin.stuff',
 )
 
 MIDDLEWARE_CLASSES = (
-        'konstantin.middleware.ArduinoMiddleware',
+        #'konstantin.middleware.ArduinoMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        )
+    )
 
 
 ROOT_URLCONF = 'konstantin.urls'
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'konstantin.wsgi.application'
 PHANTOMJS_BINARY = ROOT('konstantin/static/bin/phantomjs')
 CAPTURE_SCRIPT_PATH = ROOT('konstantin/static/bin/capture.js')
 
-BROKER_URL = variable("BROKER_URL", 'amqp://guest:guest@localhost//')
+BROKER_URL = variable("BROKER_URL", 'amqp://guest:guest@localhost:5672')
 CELERY_ACKS_LATE = True
 CELERY_RESULTS_BACKEND = 'amqp'
 
