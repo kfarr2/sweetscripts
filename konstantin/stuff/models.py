@@ -45,7 +45,8 @@ class Bio(models.Model):
     bio_id = models.AutoField(primary_key=True)
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-   
+    is_public = models.BooleanField(default=False)
+
     class Meta:
         db_table = 'bio'
 
