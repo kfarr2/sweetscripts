@@ -1,7 +1,11 @@
-{% for project in projects %}
-    {% include 'stuff/_project.html' %}
-{% empty %}
 <div class='project'>
-    <h4>No projects have been created yet.</h4>
+    {% if projects %}
+        <table class="table">
+            {% for project in projects %}
+                <tr>{% include 'stuff/_project.html' %}</tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h4>No projects have been created yet.</h4>
+    {% endif %}
 </div>
-{% endfor %}

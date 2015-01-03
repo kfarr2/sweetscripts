@@ -2,17 +2,11 @@
 {% block title %}What I do{% endblock %}
 
 {% block content %}
-	<div class="container">
-		<div class="panel panel-default">
-			<div class='panel-heading'><h2>Here's some stuff I've been working on.</h2></div>
-			<div class='panel-body'>
-				{% for project in projects %}
-					{% include 'stuff/_project.html' with project=project %}
-				{% empty %}
-					{% include 'construction.html' %}
-				{% endfor %}
-			</div>
-		</div>
+	<div class="col-md-4">
+            <h1>I did some stuff</h1>
+        </div>
+        <div class="container col-md-8">
+            {% include 'stuff/_projects.html' %}
 	</div>
 {% endblock %}
 

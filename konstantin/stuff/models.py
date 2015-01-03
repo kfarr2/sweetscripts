@@ -23,22 +23,18 @@ class Project(models.Model):
 
 
     def save(self, *args, **kwargs):
-        try:
-            self.screenshot = get_screenshot(self.site_url)
-        except:
-            pass
-
+        self.screenshot = get_screenshot(self.site_url)
         to_return = super(Project, self).save(*args, **kwargs)
         return to_return
 
 
 class ProjectFile(models.Model):
-	"""
-	Links multiple files to a project
-	"""
-	project_file_id = models.AutoField(primary_key=True)
-	file = models.ForeignKey(File, null=True, on_delete=models.SET_NULL)
-	project = models.ForeignKey(Project, null=True, on_delete=models.SET_NULL)
+    """
+    Links multiple files to a project
+    """
+    project_file_id = models.AutoField(primary_key=True)
+    file = models.ForeignKey(File, null=True, on_delete=models.SET_NULL)
+    project = models.ForeignKey(Project, null=True, on_delete=models.SET_NULL)
 
 #TODO: add bio, contact, blag, and other stuff
 class Bio(models.Model):
@@ -49,7 +45,6 @@ class Bio(models.Model):
 
     class Meta:
         db_table = 'bio'
-
 
 
 from .tasks import get_screenshot

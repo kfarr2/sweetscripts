@@ -10,46 +10,46 @@
 	{% block head %}{% endblock %}
 </head>
 <body>
-	<div class="background-image"></div>
-	<div class="wrapper">
-		<div class="main-container">
-			{% block content %}{% endblock %}
-		</div>
-	</div>
-	{% block doodle %}
-		<img class="bubble" src="{{ STATIC_URL }}img/doodles/speech_bubble_1.png" alt="" width=120px height=75px></img>
-		<img id="lilguy" src="{{ STATIC_URL }}img/doodles/lilguy_1.png" alt="" width=100px height=125px></img>
-	{% endblock %}
-	<div class="nav navbar-inverse" id="footer">
-		{% block footer %}
-			<div class="container">
-				<div class="col-md-9 buttons">
-					<a href="{% url 'home' %}" class="btn btn-small btn-default"><span class="glyphicon glyphicon-home"></span> Home</a>
-					<a id="about" href="{% url 'about' %}" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> About</a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Who I Am</a></li>
-					</ul>
-					<a href="{% url 'stuff' %}" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> Stuff</a>
-                    <a href="{% url 'contact' %}" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> Contact</a>
+    <div class="background-image"></div>
+    <div class="wrapper">
+        <div class="main-container">
+                {% block content %}{% endblock %}
+        </div>
+    </div>
+    {% block doodle %}
+        <img class="bubble" src="{{ STATIC_URL }}img/doodles/speech_bubble_1.png" alt="" width=120px height=75px></img>
+        <a href="{% url 'admin-login' %}"><img id="lilguy" src="{{ STATIC_URL }}img/doodles/lilguy_1.png" alt="" width=100px height=125px></img></a>
+    {% endblock %}
+    <div class="nav navbar-inverse" id="footer">
+        {% block footer %}
+                <div class="container">
+                        <div class="col-md-9 buttons">
+                                <a href="{% url 'home' %}" class="btn btn-small btn-default"><span class="glyphicon glyphicon-home"></span> Home</a>
+                                <a id="about" href="{% url 'about' %}" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> About</a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="#">Who I Am</a></li>
+                                </ul>
+                                <a href="{% url 'stuff' %}" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> Stuff</a>
+                                <a href="{% url 'contact' %}" class="btn btn-small btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> Contact</a>
 
-				</div>
-			</div>
+                        </div>
+                </div>
 
-			<script>
-				$(document).ready(function(e){
-					$('#about').hover($('dropdown-toggle').dropdown('toggle'));
-					
-					if ($(window).width() > 600){
-						$('container').add(
-							'<div class="col-md-3"><span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span></div>'
-						);
-					} else {
-						if ($(window.contains('<div class="col-md-3"><span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span></div>'))){
-							alert("Contains!")	
-						}
-					}
-				});	
-			</script>
-		{% endblock %}
-	</div>
+                <script>
+                        $(document).ready(function(e){
+                                $('#about').hover($('dropdown-toggle').dropdown('toggle'));
+                                
+                                if ($(window).width() > 600){
+                                        $('container').add(
+                                                '<div class="col-md-3"><span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span></div>'
+                                        );
+                                } else {
+                                        if ($(window.contains('<div class="col-md-3"><span class="pull-right" id="footer-copyright"><span class="glyphicon glyphicon-copyright-mark"></span> Konstantin Farrell, 2014</span></div>'))){
+                                                alert("Contains!")	
+                                        }
+                                }
+                        });	
+                </script>
+        {% endblock %}
+    </div>
 </body>

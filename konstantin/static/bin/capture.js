@@ -10,7 +10,7 @@ if(system.args !== null){
 page.viewportSize = { width: 1000, height: 800 };
 page.open(address, function() {
 
-    var name = 'img/'+ address.substring(address.lastIndexOf("w.")+2, address.lastIndexOf(".com")) + '.png';
+    var name = 'konstantin/static/img/screenshots/'+ address.substring(address.lastIndexOf("//")+2, address.lastIndexOf("/")) + '.png';
     page.render(name);
     phantom.exit();
 });

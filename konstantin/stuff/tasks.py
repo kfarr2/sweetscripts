@@ -14,7 +14,10 @@ def get_screenshot(url):
         settings.CAPTURE_SCRIPT_PATH,
         url,
     ])
-    image_name = url.split('www.')[1].split('.com')[0] + '.png'
-    image_path = settings.ROOT('img/', str(image_name))
-    img = Image.open(image_path)
-    return img 
+    try:
+        image_name = url.split('//')[1].split('/')[0] + '.png'
+    except IndexError as e:
+        image_name = url.split('//')[1].split('/')[0] + '.png'
+        
+    #image_path = os.path.join(str(image_name))
+    return image_name 
