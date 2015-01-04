@@ -65,4 +65,15 @@ class Bio(models.Model):
         db_table = 'bio'
 
 
+class Blog(models.Model):
+    blog_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255)
+    post = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    is_public = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'blog'
+
+
 from .tasks import get_screenshot

@@ -3,30 +3,25 @@
 {% block title %}Admin{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class='col-md-4'>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
-    </div>
-    <div class='container col-md-8 pull-right'>
-        <span><h1>Control Portal O' Doom</h1></span>
-        <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
-        <div class='container-center'>
-            {% include 'stuff/_projects.html' %}
-        </div>
+<div class='col-md-3 center-vertical'>
+    <p><a href='#' class='btn btn-default btn-large center-sm'>Websites</a></p>
+    <p><a href='#' class='btn btn-default btn-large'>Applications</a></p>
+    <p><a href='#' class='btn btn-default btn-large'>Electronics</a></p>
+    <p><a href='#' class='btn btn-default btn-large'>Music</a></p>
+</div>
+<div class='container col-md-8 pull-right'>
+    <span><h1>Control Portal O' Doom</h1></span>
+    <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
+    <br />
+    <div class='container-center'>
+        {% include 'stuff/_projects.html' %}
     </div>
 </div>
 <script>
    $(document).ready(function(){
-   var height = $(document).height() - 230;
-   $('.container-center').height(height);
-   });
+        var height = $(document).height() - 230;
+        var start = 100;
+        $('.container-center').height(height);
+    });
 </script>
 {% endblock %}
