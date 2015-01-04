@@ -3,6 +3,7 @@ from django.conf import settings
 from django.db import models
 from konstantin.files.models import File
 
+
 class Project(models.Model):
     """
     Basic model for a project
@@ -49,12 +50,16 @@ class ProjectFile(models.Model):
     file = models.ForeignKey(File, null=True, on_delete=models.SET_NULL)
     project = models.ForeignKey(Project, null=True, on_delete=models.SET_NULL)
 
+    class Meta:
+        db_table = 'project_file'
+
 #TODO: add bio, contact, blag, and other stuff
 class Bio(models.Model):
     bio_id = models.AutoField(primary_key=True)
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     is_public = models.BooleanField(default=False)
+
 
     class Meta:
         db_table = 'bio'

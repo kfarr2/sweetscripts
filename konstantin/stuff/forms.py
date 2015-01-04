@@ -27,7 +27,7 @@ class ProjectForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ProjectForm, self).__init__(*args, **kwargs)
-        kwargs['project'] = kwargs.get("instance")
+        kwargs['project'] = kwargs.get('instance')
         self.fields['type'].choices = ProjectType
         self.fields['current_state'].choices = ProjectState
         self.fields['role'].choices = ProjectRole
