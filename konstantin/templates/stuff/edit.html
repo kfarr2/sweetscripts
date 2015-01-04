@@ -7,17 +7,28 @@
     <div class='center-sm'>
                 <h1>{% if project_id %}Edit{% else %}Create{% endif %}</h1>
                 <form method='post'>
-                    {% csrf_token %}
-                    {% include '_field.html' with field=form.name %}
-                    {% include '_field.html' with field=form.description %}
-                    <div class='col-md-6'>
-                            {% include '_field.html' with field=form.date_completed %}
-                    </div>
-                    <div class='col-md-6'>
-                            {% include '_field.html' with field=form.team %}
-                    </div>
-                    {% include '_field.html' with field=form.site_url %}
-                    {% include '_field.html' with field=form.screenshot %}
+                        {% csrf_token %}
+                        {% include '_field.html' with field=form.name %}
+                        <div class='col-md-6'>
+                            {% include '_field.html' with field=form.description %}
+                        </div>
+                        <div class='col-md-6'>
+                            {% include '_field.html' with field=form.role %} 
+                        </div>
+                        <div class='col-md-6'>
+                                {% include '_field.html' with field=form.date_completed %}
+                        </div>
+                        <div class='col-md-6'>
+                                {% include '_field.html' with field=form.team %}
+                        </div>
+                        {% include '_field.html' with field=form.site_url %}
+                        {% include '_field.html' with field=form.screenshot %}
+                        <div class='col-md-6'>
+                            {% include '_field.html' with field=form.type %} 
+                        </div>
+                        <div class='col-md-6'>
+                            {% include '_field.html' with field=form.current_state %} 
+                        </div>
                     <div class='text-center'>
                             <input class='btn btn-small btn-default' type=submit value=Submit></input>
                             <a href='{% url 'admin' %}' class='btn btn-small btn-default'>Cancel</a>

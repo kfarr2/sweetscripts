@@ -30,3 +30,66 @@ def get_client_ip(request):
     return ip
 
 
+class IterableChoiceEnum(type): #NOTE: Original written by PSU-OIT-ARC
+
+    def __init__(cls, name, bases, attrs):
+        cls._choices_dict = dict(cls)
+
+    def __iter__(cls):
+        """Simply return the iterator of the _choices tuple"""
+        return iter(cls._choices)
+
+    def __getitem__(cls, choice):
+        """Return choice description via item access.
+
+        Example::
+
+            >>> class MyEnum(ChoiceEnum):
+            ...
+            ...     A = 1
+            ...     B = 2
+            ...
+            ...     _choices = (
+            ...         (A, 'Alpha'),
+            ...         (B, 'Beta'),
+            ...     )
+            ...
+            >>> MyEnum[MyEnum.A]
+            'Alpha'
+
+        """
+        return cls._choices_dict[choice]
+
+    def get(cls, choice, default=None):
+        try:
+            return cls[choice]
+        except KeyError:
+            return default
+
+
+@add_metaclass(IterableChoiceEnum)
+class ChoiceEnum(object):
+    """
+    This creates an iterable *class* (as opposed to an iterable *instance* of a
+    class). Subclasses must define a class variable called `_choices` which is a
+    list of 2-tuples. Subclasses can be passed directly to a field as the
+    `choice` kwarg.
+
+    For example:
+
+    class FooType(ChoiceEnum):
+        A = 1
+        B = 2
+
+        _choices = (
+            (A, "Alpha"),
+            (B, "Beta"),
+        )
+
+
+    class SomeModel(models.Model):
+        foo = models.ChoiceField(choices=FooType)
+    """
+    _choices = ()
+    # http://stackoverflow.com/questions/5434401/python-is-it-possible-to-make-a-class-iterable-using-the-standard-syntax
+

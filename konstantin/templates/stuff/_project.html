@@ -1,8 +1,16 @@
 <td>
-    <h4>{{ project.name|title }}</h4>
+    <h3>{{ project.name|title }}</h3>
     <p>{{ project.description|truncatechars:200 }}</p>
     <p>Team: {{ project.team|upper }}</p>
-    {% if user.is_authenticated %}
+    <p>
+    {% if project.status == project_status.COMPLETE %}
+        Date Completed: {{ project.date_completed|date }}
+    {% endif %}
+    </p>
+    {% for role in project.role %}
+        
+    {% endfor %}
+    {% if user.is_authenticated and 'admin' in request.path %}
         <a href="{% url 'stuff-delete-project' project.pk %}" class='btn btn-default btn-small'>Delete</a><p>
         <a href="{% url 'stuff-edit' project.pk %}" class='btn btn-default btn-small'>Edit</a><p>
     {% endif %}

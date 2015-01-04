@@ -4,20 +4,29 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="pull-right">Control Portal O' Doom</h1>
     <div class='col-md-4'>
-        <ul class='nav nav-pills nav-stacked'>
-            <li>
-                <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
-            </li>
-            <br />
-            <li>
-                <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
-            </li>
-        </ul>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
+        <a href='#' class='btn btn-default btn-small'>New Project</a><p>
     </div>
-    <div class='col-md-8 pull-right'>
-        {% include 'stuff/_projects.html' %}
+    <div class='container col-md-8 pull-right'>
+        <span><h1>Control Portal O' Doom</h1></span>
+        <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
+        <div class='container-center'>
+            {% include 'stuff/_projects.html' %}
+        </div>
     </div>
 </div>
+<script>
+   $(document).ready(function(){
+   var height = $(document).height() - 230;
+   $('.container-center').height(height);
+   });
+</script>
 {% endblock %}

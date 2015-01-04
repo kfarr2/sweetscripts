@@ -2,12 +2,19 @@
 {% block title %}What I do{% endblock %}
 
 {% block content %}
-	<div class="col-md-4">
-            <h1>I did some stuff</h1>
-        </div>
-        <div class="container col-md-8">
+    <div class="col-md-4">
+        <h1>I did some stuff</h1>
+    </div>
+    <div class="container col-md-8">
+        <div class='container-center'>
             {% include 'stuff/_projects.html' %}
-	</div>
+        </div>
+    </div>
+    <script>
+       $(document).ready(function(){
+       var height = $(document).height() - 100;
+       $('.container-center').height(height);
+       });
+    </script>
 {% endblock %}
-
 

@@ -7,6 +7,7 @@ from django.conf import settings
 from .models import Project, ProjectFile
 from .forms import ProjectForm
 from .tasks import get_screenshot
+from .enums import ProjectType, ProjectState, ProjectRole
 
 # Create your views here.
 
@@ -14,9 +15,11 @@ def list(request):
 
 	projects = Project.objects.all()
 	project_files = ProjectFile.objects.all()	
-	
 	return render(request, 'stuff/list.html', {
 		'projects': projects,
+                'project_status': ProjectState,
+                'project_role': ProjectRole,
+                'project_type': ProjectType,
 		'project_files': project_files,
 	})
 

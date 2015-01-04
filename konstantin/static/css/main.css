@@ -94,9 +94,16 @@ body {
 	height: 100%;
 }
 
-.container > h1 {
+.container > span > h1 {
 	color: #ddd;
         font-size: 72px;
+}
+
+.container-center {
+    position: relative;
+    overflow-y: scroll;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 #construction {
@@ -190,12 +197,12 @@ hr {
 
 .panel {
     margin-top: 3em;
-	margin-bottom:20px;
-	background-color: inherit;
-	border:1px solid transparent;
-	border-radius:4px;
-	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
-	box-shadow:0 1px 1px rgba(0,0,0,.05)
+    margin-bottom:20px;
+    background-color: inherit;
+    border:1px solid transparent;
+    border-radius:4px;
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
+    box-shadow:0 1px 1px rgba(0,0,0,.05)
 }
 
 .panel-body {
@@ -211,11 +218,11 @@ hr {
 }
 
 .panel-heading {
-	opacity: 0.5;
-	padding:10px 15px;
-	border-bottom:1px solid transparent;
-	border-top-left-radius:3px;
-	border-top-right-radius:3px
+    opacity: 0.5;
+    padding:10px 15px;
+    border-bottom:1px solid transparent;
+    border-top-left-radius:3px;
+    border-top-right-radius:3px
 }
 
 .panel-internal {
