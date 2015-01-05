@@ -33,4 +33,6 @@ urlpatterns = patterns('',
 
     # Blog
     url(r'^blog/?$', blog.list_, name='blog'),
+    url(r'^blog/create/?$', blog.create, name='blog-create'),
+    url(r'^blog/(?P<post_id>\d+)/edit/?$', blog.edit, name='blog-edit'),
 )
