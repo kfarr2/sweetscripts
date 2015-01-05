@@ -8,4 +8,8 @@ run:
 clean:
 	find -iname "*.pyc" -delete
 	find -iname "__pycache__" -delete
+	
+migrate:
+	./manage.py syncdb
+	./manage.py migrate
 
