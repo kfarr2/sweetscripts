@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'celery',
     'coverage',
     'model_mommy',
+    'konstantin.blog',
     'konstantin.home',
     'konstantin.files',
     'konstantin.utils',

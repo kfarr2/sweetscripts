@@ -1,0 +1,23 @@
+<ul class='nav nav-pills nav-stacked default'>
+    <li class='active'><button class='btn btn-default btn-large'>All</button></li>
+    <li class='inactive'><button class='btn btn-default btn-large'>Websites</button></li>
+    <li class='inactive'><button class='btn btn-default btn-large'>Applications</button></li>
+    <li class='inactive'><button class='btn btn-default btn-large'>Electronics</button></li>
+    <li class='inactive'><button class='btn btn-default btn-large'>Music</button></li>
+</ul>
+
+<script>
+   $(document).ready(function(){
+        var height = $(document).height() - 230;
+        $('.container-center').height(height);
+        
+        $('.inactive').click(function(e){
+            e.preventDefault()
+            $(this).parent().find('.active').removeClass('active').toggleClass('inactive');
+            $(this).removeClass('inactive').toggleClass('active');
+            $.cookie('whichButton', $(this), { path: '/'});
+        });
+
+        $($.cookie).toggleClass('active');
+    });
+</script>

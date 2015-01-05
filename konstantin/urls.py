@@ -3,9 +3,11 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from konstantin.blog import views as blog
 from konstantin.home import views as home
 from konstantin.files import views as files
 from konstantin.stuff import views as stuff
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -28,4 +30,7 @@ urlpatterns = patterns('',
 
     # Contact
     url(r'^contact/?$', stuff.contact, name='contact'),
+
+    # Blog
+    url(r'^blog/?$', blog.list_, name='blog'),
 )
