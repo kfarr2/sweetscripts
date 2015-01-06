@@ -8,9 +8,6 @@
 
 <script>
    $(document).ready(function(){
-        var height = $(document).height() - 230;
-        $('.container-center').height(height);
-        
         $('.inactive').click(function(e){
             e.preventDefault()
             $(this).parent().find('.active').removeClass('active').toggleClass('inactive');

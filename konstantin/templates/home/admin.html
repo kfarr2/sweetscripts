@@ -14,4 +14,10 @@
         {% include 'stuff/_projects.html' %}
     </div>
 </div>
+<script>
+   $(document).ready(function(){
+   var height = $(document).height() - 215;
+   $('.container-center').height(height);
+   });
+</script>
 {% endblock %}
