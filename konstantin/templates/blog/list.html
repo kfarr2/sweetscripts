@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="col-md-3">
+    {% if posts %}
+        {% for post in posts %}
+            {{ post }}
+        {% empty %}
+        <h1>No posts</h1>
+        {% endfor %}
+    {% endif %}
+</div>
 
 {% endblock %}
