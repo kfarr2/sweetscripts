@@ -3,7 +3,8 @@ from django.conf import settings
 from django.db import models
 from konstantin.files.models import File
 
-
+#TODO: There should be a couple different fields for a project example / screenshot
+#TODO: Maybe figure out a place for a github link / facebook page / twitter
 class Project(models.Model):
     """
     Basic model for a project
@@ -65,6 +66,7 @@ class Bio(models.Model):
         db_table = 'bio'
 
 
+#TODO: maybe split the form & model into specific fields
 class Blog(models.Model):
     blog_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
