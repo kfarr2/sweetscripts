@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.utils.http import is_safe_url
 from konstantin.utils import get_client_ip 
-from konstantin.stuff.models import Project, Bio
+from konstantin.stuff.models import Project
 from .models import Admin
 from .forms import AdminLoginForm
 
@@ -20,29 +20,12 @@ def home(request):
         "client_ip": ip,
     })
 
-def about(request):
-    """
-    #TODO: write a bio section. make bio forms.
-    #TODO: make a nice about frame.
-    General Bio Section.
-    Should have:
-            - Short Bio.
-            - Previous work.
-            - Current work.
-            - Skills, hobbies and interests.
-    """
-    return render(request, 'home/about.html', {
-            
-    })
-
-
 @login_required
 def admin(request):
     """
     #TODO: add more stuff. (edit buttons, bio, work, contact)
     """
     projects = Project.objects.all()
-    bio = Bio.objects.all()
     return render(request, 'home/admin.html', {
         'projects': projects,
     })
@@ -50,7 +33,7 @@ def admin(request):
 
 def admin_login(request):
     """
-
+    general login
     """
     if request.user.is_authenticated():
         return HttpResponseRedirect(reverse('admin'))

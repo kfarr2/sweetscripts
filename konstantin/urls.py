@@ -3,6 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from konstantin.bio import views as bio
 from konstantin.blog import views as blog
 from konstantin.home import views as home
 from konstantin.files import views as files
@@ -18,8 +19,6 @@ urlpatterns = patterns('',
     url(r'^login/admin/?$', home.admin_login, name='admin-login'),
     url(r'^$', home.home, name='home'),
     url(r'^files/?$', files.list_, name='files-list'),
-
-    url(r'^about/?$', home.about, name='about'),
 
     url(r'^stuff/?$', stuff.list, name='stuff'),	
 
