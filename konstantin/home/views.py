@@ -8,6 +8,8 @@ from django.conf import settings
 from django.utils.http import is_safe_url
 from konstantin.utils import get_client_ip 
 from konstantin.stuff.models import Project
+from konstantin.stuff.enums import ProjectType, ProjectState
+from konstantin.blog.models import BlogPost
 from .models import Admin
 from .forms import AdminLoginForm
 
@@ -26,8 +28,12 @@ def admin(request):
     #TODO: add more stuff. (edit buttons, bio, work, contact)
     """
     projects = Project.objects.all()
+    blog = BlogPost.objects.all()
     return render(request, 'home/admin.html', {
+        'ProjectType': ProjectType,
+        'ProjectState': ProjectState,
         'projects': projects,
+        'blog': blog,
     })
 
 

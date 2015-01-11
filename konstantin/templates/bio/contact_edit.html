@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class='col-md-4'>
+
+</div>
+<div class='col-md-8'>
+    <h1>Contact</h1>
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input class='btn btn-default btn-small' type='submit' value='Submit'></input>
+    <a href='{% url 'admin' %}' class='btn btn-default btn-small'>Cancel</a>
+</div>
+{% endblock %}

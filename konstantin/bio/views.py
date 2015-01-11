@@ -40,3 +40,19 @@ def contact(request):
     return render(request, 'bio/contact.html', {
         'contact': contact,
     })
+
+def contact_edit(request):
+    """
+    Edit contact info
+    """
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('contact'))
+    else:
+        form = ContactForm()
+
+    return render(request, 'bio/contact_edit.html', {
+        'form': form,    
+    })

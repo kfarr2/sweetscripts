@@ -29,6 +29,7 @@ urlpatterns = patterns('',
 
     # Contact
     url(r'^contact/?$', bio.contact, name='contact'),
+    url(r'^contact/edit/?$', bio.contact_edit, name='contact-edit'),
 
     # About
     url(r'^about/?$', bio.about, name='about'),

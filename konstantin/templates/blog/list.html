@@ -4,9 +4,10 @@
 <div class="col-md-4">
 </div>
 <div class="col-md-8">
+    <h1>Check out mah blag!</h1>
     {% if posts %}
         {% for post in posts %}
-            {{ post.title }}
+            {% include 'blog/_post.html' %}
         {% empty %}
         <h1>No posts</h1>
         {% endfor %}

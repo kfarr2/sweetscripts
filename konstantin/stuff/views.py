@@ -17,9 +17,9 @@ def list(request):
 	project_files = ProjectFile.objects.all()	
 	return render(request, 'stuff/list.html', {
 		'projects': projects,
-                'project_status': ProjectState,
-                'project_role': ProjectRole,
-                'project_type': ProjectType,
+                'ProjectState': ProjectState,
+                'ProjectRole': ProjectRole,
+                'ProjectType': ProjectType,
 		'project_files': project_files,
 	})
 
