@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
-
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
@@ -40,3 +41,7 @@ urlpatterns = patterns('',
     url(r'^blog/create/?$', blog.create, name='blog-create'),
     url(r'^blog/(?P<post_id>\d+)/edit/?$', blog.edit, name='blog-edit'),
 )
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static("htmlcov", document_root="htmlcov", show_indexes=True)
