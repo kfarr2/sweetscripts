@@ -8,9 +8,13 @@
 </div>
 <div class='col-md-8'>
     <h1>Contact</h1>
-    {% csrf_token %}
-    {{ form.as_table }}
-    <input class='btn btn-default btn-small' type='submit' value='Submit'></input>
-    <a href='{% url 'admin' %}' class='btn btn-default btn-small'>Cancel</a>
+    <div class='col-md-6'>
+        <form>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class='btn btn-default btn-small' type='submit' value='Submit'></input>
+            <a href='{% url 'admin' %}' class='btn btn-default btn-small'>Cancel</a>
+        </form>
+    </div>
 </div>
 {% endblock %}

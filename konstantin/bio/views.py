@@ -45,13 +45,15 @@ def contact_edit(request):
     """
     Edit contact info
     """
+    info = Contact.objects.first() or None
+
     if request.method == "POST":
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, instance=info)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('contact'))
     else:
-        form = ContactForm()
+        form = ContactForm(instance=info)
 
     return render(request, 'bio/contact_edit.html', {
         'form': form,    
