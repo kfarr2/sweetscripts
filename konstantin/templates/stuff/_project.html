@@ -7,7 +7,7 @@
     {% endif %}
     <p>Team: {{ project.team|upper }}</p>
     <p>
-    {% if project.status == project_status.COMPLETE %}
+    {% if project.current_state == ProjectState.COMPLETED %}
         Date Completed: {{ project.date_completed|date }}
     {% endif %}
     </p>

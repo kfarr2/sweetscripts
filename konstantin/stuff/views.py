@@ -56,9 +56,3 @@ def delete_project(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     project.delete()
     return HttpResponseRedirect(reverse('stuff'))
-
-def contact(request):
-    
-    return render(request, 'stuff/contact.html', {
-        
-    })

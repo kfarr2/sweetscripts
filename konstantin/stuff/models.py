@@ -18,7 +18,7 @@ class Project(models.Model):
     current_state = models.IntegerField()
 
     date_added = models.DateTimeField(auto_now_add=True)
-    date_completed = models.DateTimeField(auto_now=False, blank=True)
+    date_completed = models.DateTimeField(blank=True, null=True)
     team = models.CharField(max_length=255)
     screenshot = models.ImageField(upload_to=settings.MEDIA_ROOT, max_length=100)
     site_url = models.URLField(max_length=200, null=True)

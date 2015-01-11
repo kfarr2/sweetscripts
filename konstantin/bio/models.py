@@ -6,7 +6,7 @@ class Bio(models.Model):
     """
     bio_id = models.AutoField(primary_key=True)
     content = models.TextField()
-    is_public = models.BooleanField()
+    is_public = models.BooleanField(default=False)
 
     class Meta:
         db_table = "bio"
