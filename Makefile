@@ -1,4 +1,4 @@
-.PHONY: run clean migrate
+.PHONY: run clean migrate test cover
 
 # run the traaaaap
 run:
@@ -13,3 +13,8 @@ migrate:
 	./manage.py syncdb
 	./manage.py migrate
 
+test:
+	./manage.py test
+	
+cover:
+	coverage run ./manage.py test && coverage html
