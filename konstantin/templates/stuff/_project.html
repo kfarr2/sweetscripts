@@ -3,7 +3,7 @@
     {% if user.is_authenticated and 'admin' in request.path %}
         <p>{{ project.description|truncatechars:100 }}</p>
     {% else %}
-        <p>{{ project.description|truncatechars:200 }}</p>
+        <p>{{ project.description|truncatechars:250 }}</p>
     {% endif %}
     <p>Team: {{ project.team|upper }}</p>
     <p>
@@ -27,12 +27,14 @@
 <td>
     {% if user.is_authenticated and 'admin' in request.path %}
         {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
-            <img class='screenshot pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' width=200px height=150px>
+            <img class='pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=200 height=150 />
         {% if project.site_url %}</a>{% endif %}
     {% else %}
+    <div class='screenshot-container'>
         {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
-            <img class='screenshot pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' width=400px height=275px>
+            <img class='screenshot pic pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=400 height=275 />
         {% if project.site_url %}</a>{% endif %}
+    </div>
     {% endif %}
     {% if user.is_authenticated and 'admin' in request.path %}
         <p class='pull-right'><a href="{% url 'stuff-delete-project' project.pk %}" class='btn btn-default btn-small'>Delete</a>
