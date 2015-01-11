@@ -20,15 +20,19 @@ urlpatterns = patterns('',
     url(r'^$', home.home, name='home'),
     url(r'^files/?$', files.list_, name='files-list'),
 
-    url(r'^stuff/?$', stuff.list, name='stuff'),	
 
     # Projects
+    url(r'^stuff/?$', stuff.list, name='stuff'),	
     url(r'^stuff/admin/create/project/?$', stuff.create, name='stuff-create'),
     url(r'^stuff/admin/(?P<project_id>\d+)/?$', stuff.edit, name='stuff-edit'),
     url(r'^stuff/admin/(?P<project_id>\d+)/delete/?$', stuff.delete_project, name='stuff-delete-project'),
 
     # Contact
-    url(r'^contact/?$', stuff.contact, name='contact'),
+    url(r'^contact/?$', bio.contact, name='contact'),
+
+    # About
+    url(r'^about/?$', bio.about, name='about'),
+    url(r'^about/edit/?$', bio.about_edit, name='about-edit'),
 
     # Blog
     url(r'^blog/?$', blog.list_, name='blog'),
