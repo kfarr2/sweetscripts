@@ -19,7 +19,7 @@ class Project(models.Model):
     current_state = models.IntegerField()
 
     date_added = models.DateTimeField(auto_now_add=True)
-    date_completed = models.DateTimeField(auto_now=False, blank=True)
+    date_completed = models.DateTimeField(blank=True, null=True)
     team = models.CharField(max_length=255)
     screenshot = models.ImageField(upload_to=settings.MEDIA_ROOT, max_length=100)
     site_url = models.URLField(max_length=200, null=True)
@@ -53,29 +53,5 @@ class ProjectFile(models.Model):
 
     class Meta:
         db_table = 'project_file'
-
-#TODO: add bio, contact, blag, and other stuff
-class Bio(models.Model):
-    bio_id = models.AutoField(primary_key=True)
-    content = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
-    is_public = models.BooleanField(default=False)
-
-
-    class Meta:
-        db_table = 'bio'
-
-
-#TODO: maybe split the form & model into specific fields
-class Blog(models.Model):
-    blog_id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=255)
-    post = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
-    is_public = models.BooleanField(default=False)
-
-    class Meta:
-        db_table = 'blog'
-
 
 from .tasks import get_screenshot

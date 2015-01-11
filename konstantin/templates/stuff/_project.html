@@ -1,22 +1,43 @@
 <td>
     <h3>{{ project.name|title }}</h3>
-    <p>{{ project.description|truncatechars:200 }}</p>
+    {% if user.is_authenticated and 'admin' in request.path %}
+        <p>{{ project.description|truncatechars:100 }}</p>
+    {% else %}
+        <p>{{ project.description|truncatechars:250 }}</p>
+    {% endif %}
     <p>Team: {{ project.team|upper }}</p>
     <p>
-    {% if project.status == project_status.COMPLETE %}
+    {% if project.current_state == ProjectState.COMPLETED %}
         Date Completed: {{ project.date_completed|date }}
     {% endif %}
     </p>
-    {% for role in project.role %}
-        
-    {% endfor %}
-    {% if user.is_authenticated and 'admin' in request.path %}
-        <a href="{% url 'stuff-delete-project' project.pk %}" class='btn btn-default btn-small'>Delete</a><p>
-        <a href="{% url 'stuff-edit' project.pk %}" class='btn btn-default btn-small'>Edit</a><p>
+    <p>
+    Type: 
+    {% if project.type == ProjectType.WEBSITE %}
+        Website
+    {% elif project.type == ProjectType.APPLICATION %}
+        Application
+    {% elif project.type == ProjectType.ELECTRONICS %}
+        Electronics
+    {% elif project.type == ProjectType.MUSIC %}
+        Music
     {% endif %}
+    </p>
 </td>
 <td>
-{% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
-    <img class='screenshot pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' width=400px height=275px>
-{% if project.site_url %}</a>{% endif %}
+    {% if user.is_authenticated and 'admin' in request.path %}
+        {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
+            <img class='pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=200 height=150 />
+        {% if project.site_url %}</a>{% endif %}
+    {% else %}
+    <div class='screenshot-container'>
+        {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
+            <img class='screenshot pic pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=400 height=275 />
+        {% if project.site_url %}</a>{% endif %}
+    </div>
+    {% endif %}
+    {% if user.is_authenticated and 'admin' in request.path %}
+        <p class='pull-right'><a href="{% url 'stuff-delete-project' project.pk %}" class='btn btn-default btn-small'>Delete</a>
+        <p class='pull-right'><a href="{% url 'stuff-edit' project.pk %}" class='btn btn-default btn-small'>Edit</a>
+    {% endif %}
 </td>

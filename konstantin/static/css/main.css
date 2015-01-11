@@ -4,11 +4,12 @@
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body {
@@ -24,35 +25,39 @@ body {
 }
 
 .background-image {
-	z-index: -1;
-	position: absolute;
-	overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    overflow: hidden;
     width: 30%;
-	height: 100%;	
-	background-color:#333;
+    height: 100%;	
+    background-color:#333;
     //background-image: url('../img/computer_stock_2.png');
-	opacity: 0.9;
-	border-right: 1px dotted #ddd;
+    opacity: 0.9;
+    border-right: 1px dotted #ddd;
+}
+
+.blog {
+    color: #ddd;    
 }
 
 .buttons {
-	margin-top: -5px;
-	padding-left: 20px;
+    margin-top: -5px;
+    padding-left: 20px;
 }
 
 /* small buttons used frequently */
 .btn.btn-small.btn-default {
-	margin-top: 1px;
-	margin-left: 20px;
-	margin-right: 20px;
-	background-color: #222;
-	border: 0px;
-	border-left: 1px solid #333;
-	border-right: 1px solid #333;
-	color: #ddd;
-	height: 30px;
-	width: 125px;
-	padding-top: 5px;
+    margin-top: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #222;
+    border: 0px;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    color: #ddd;
+    height: 30px;
+    width: 125px;
+    padding-top: 5px;
 }
 
 .btn.btn-small.btn-default:focus{outline:none;}
@@ -66,18 +71,18 @@ body {
 
 /* large buttons used frequently */
 .btn.btn-large.btn-default {
-	margin-top: 10px;
-	margin-left: 20px;
-	margin-right: 20px;
-	background-color: #222;
-	border: 0px;
-	border-left: 1px solid #333;
-	border-right: 1px solid #333;
-	border-radius: 7px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #222;
+    border: 0px;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-radius: 7px;
     color: #ddd;
-	height: 50px;
-	width: 300px;
-	padding-top: 7px;
+    height: 50px;
+    width: 300px;
+    padding-top: 7px;
     font-size: 24px;
 }
 
@@ -140,6 +145,10 @@ body {
     margin-top: auto;
 }
 
+.container col-md-5 pull-right{
+    overflow-x: hidden;    
+}
+
 #construction {
     margin-bottom: auto;
 	margin-top: auto;
@@ -193,10 +202,10 @@ body {
 }
 
 html {
-	overflow: hidden;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 hr {
@@ -205,18 +214,18 @@ hr {
 }
 
 #intro-text {
-	-webkit-animation-duration: 2s;
-	-webkit-animation-delay: 5s;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 5s;
 }
 
 .main-container {
     overflow:hidden;
-	position: absolute;
-	min-height: 100%;
-	height: 100%;
-	padding: 20px;
-	width: 100%;
-	font-family: Roboto-Light;
+    position: absolute;
+    min-height: 100%;
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+    font-family: Roboto-Light;
 }
 
 #main-info {
@@ -264,8 +273,16 @@ hr {
     overflow-y: scroll;
 }
 
+.pic {
+    overflow: hidden;
+}
+
+.pic:hover {
+    cursor: pointer;
+}
 .project {	
-	min-height: 110px;
+	overflow-x: hidden;
+        min-height: 110px;
 	margin: 5px;
 }
 
@@ -274,10 +291,25 @@ hr {
 	height: 3em;
 }
 
+.screenshot-container {
+    width: 400px;
+    height: 275px;
+    overflow: hidden;
+}
 .screenshot {
-    margin: 5px;
-    padding: 1px;
-    border: 1px solid #222;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease; 
+}
+
+.screenshot:hover {
+    height:360px;
+    width:500px;
+    margin-right: -100px;
 }
 
 .td {

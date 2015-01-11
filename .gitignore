@@ -6,4 +6,5 @@ __pycache__
 variables.py
 page.png
 img/
-*migrations/*
+.coverage
+htmlcov

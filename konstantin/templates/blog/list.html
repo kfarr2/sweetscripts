@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
-
+{% block title %}Blag{% endblock %}
 {% block content %}
-<div class="col-md-3">
+<div class="col-md-4">
+</div>
+<div class="col-md-8">
+    <h1>Check out mah blag!</h1>
     {% if posts %}
         {% for post in posts %}
-            {{ post }}
+            {% include 'blog/_post.html' %}
         {% empty %}
         <h1>No posts</h1>
         {% endfor %}
     {% endif %}
 </div>
-
 {% endblock %}

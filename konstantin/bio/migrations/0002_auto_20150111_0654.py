@@ -7,14 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('stuff', '0008_auto_20150104_1026'),
+        ('bio', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='project',
-            name='screenshot',
-            field=models.ImageField(upload_to='/home/konstantin/workspace/personal/media'),
+            model_name='bio',
+            name='is_public',
+            field=models.BooleanField(default=False),
             preserve_default=True,
         ),
     ]
