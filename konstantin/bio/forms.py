@@ -2,7 +2,6 @@ from django import forms
 from .models import Bio, Contact
 
 
-#TODO: write bio forms, contact forms, project forms, blag forms & more. 
 class BioForm(forms.ModelForm):
     is_public = forms.BooleanField(required=False)
 
@@ -16,7 +15,8 @@ class BioForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BioForm, self).__init__(*args, **kwargs)
-    
+        kwargs['bio'] = kwargs.get('instance')
+
     def save(self, *args, **kwargs):
         super(BioForm, self).save(*args, **kwargs)
 
@@ -34,3 +34,7 @@ class ContactForm(forms.ModelForm):
 
             'birthday',
         )
+
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        kwargs['contact'] = kwargs.get('instance')

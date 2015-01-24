@@ -17,9 +17,9 @@ def home(request):
     """
     #TODO: auto redirect after a few seconds.
     """
-    ip = get_client_ip(request)
+
     return render(request, 'home/home.html', {
-        "client_ip": ip,
+
     })
 
 @login_required

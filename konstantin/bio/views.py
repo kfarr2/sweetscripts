@@ -17,13 +17,15 @@ def about_edit(request):
     """
     edit bio
     """
+    edit = Bio.objects.first()
+
     if request.method == "POST":
-        form = BioForm(request.POST)
+        form = BioForm(request.POST, instance=edit)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('about'))
     else:
-        form = BioForm()
+        form = BioForm(instance=edit)
 
 
     return render(request, 'bio/about_edit.html', {
@@ -45,15 +47,15 @@ def contact_edit(request):
     """
     Edit contact info
     """
-    info = Contact.objects.first() or None
+    contact = Contact.objects.first()
 
     if request.method == "POST":
-        form = ContactForm(request.POST, instance=info)
+        form = ContactForm(request.POST, instance=contact)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('contact'))
     else:
-        form = ContactForm(instance=info)
+        form = ContactForm(instance=contact)
 
     return render(request, 'bio/contact_edit.html', {
         'form': form,    

@@ -9,27 +9,29 @@ from .forms import ProjectForm
 from .tasks import get_screenshot
 from .enums import ProjectType, ProjectState, ProjectRole
 
-# Create your views here.
 
 def list(request):
+    """
+    List projects and stuff
+    """
 
-	projects = Project.objects.all()
-	project_files = ProjectFile.objects.all()	
-	return render(request, 'stuff/list.html', {
-		'projects': projects,
-                'ProjectState': ProjectState,
-                'ProjectRole': ProjectRole,
-                'ProjectType': ProjectType,
-		'project_files': project_files,
-	})
+    projects = Project.objects.all()
+    project_files = ProjectFile.objects.all()   
+    return render(request, 'stuff/list.html', {
+        'projects': projects,
+        'ProjectState': ProjectState,
+        'ProjectRole': ProjectRole,
+        'ProjectType': ProjectType,
+        'project_files': project_files,
+    })
 
 @login_required
 def create(request):
-	return _edit(request, project_id=None)
+    return _edit(request, project_id=None)
 
 @login_required
 def edit(request, project_id):
-	return _edit(request, project_id)
+    return _edit(request, project_id)
 
 def _edit(request, project_id):
     """
@@ -50,7 +52,7 @@ def _edit(request, project_id):
 
     return render(request, 'stuff/edit.html', {
             'form': form,
-    })	
+    })
 
 def delete_project(request, project_id):
     project = get_object_or_404(Project, pk=project_id)

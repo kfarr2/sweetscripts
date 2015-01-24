@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} Who is this guy?{% endblock %}
+<script src='{{ STATIC_URL }}js/strapdown.js'></script>
 {% block content %}
-    {% if about %}
-        {{ about }}
+<div class='col-md-4'>
+</div>
+<div class='col-md-8 container center-vertical'>
+    {% if bio %}
+            <xmp>{{ bio.content }}</xmp>
     {% endif %}
+</div>
 {% endblock %}

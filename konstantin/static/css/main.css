@@ -65,7 +65,6 @@ body {
 .btn.btn-small.btn-default:hover {
     box-shadow: inset 0px 0px 2px 1px #111;
     opacity: 0.7;
-    //box-shadow: 0px 0px 2px 1px #383838;
     //background-color: #293f50;
 }
 
@@ -296,6 +295,12 @@ hr {
     height: 275px;
     overflow: hidden;
 }
+
+.screenshot-container:hover {
+    box-shadow: 0px 0px 1px 1px #333;
+    opacity: 0.8;
+}
+
 .screenshot {
     margin: 0px;
     padding: 0px;
@@ -323,9 +328,10 @@ hr {
     text-shadow: 0px 0px 15px 20px #222;
 }
 
-.well > h1 {
-    color: #333;
+.well {
+    color: #000;
 }
+
 
 .wrapper {
     min-height: 100%;
