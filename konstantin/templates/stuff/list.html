@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
 {% block title %}What I do{% endblock %}
 
 {% block content %}
-    <div class="col-md-4">
-        <h1>I did some stuff</h1>
-        <br />
-        {% include 'stuff/_menu.html' %}
+    <div class="text-center">
+        <h2>STUFF I DID</h2>
     </div>
-    <div class="container col-md-8 pull-right">
-        <div class='container-center'>
-            {% include 'stuff/_projects.html' %}
-        </div>
+    <div class='container-center'>
+        {% include 'stuff/_projects.html' %}
     </div>
     <script>
        $(document).ready(function(){
-       var height = $(document).height() - 75;
+       var height = $(document).height() - 150;
        $('.container-center').height(height);
        });
     </script>

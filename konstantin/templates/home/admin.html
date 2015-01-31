@@ -10,21 +10,19 @@
 </div>
 <div class='col-md-3'>
     <h1>Blog</h1>
-    <br />
-    <a href='{% url 'blog-create' %}' class='btn btn-default btn-small'>New Blog Post</a>
     <div class='container-center'>
         {% for post in blog %}
             {% include 'blog/_post.html' %}
         {% endfor %}
     </div>
+    <a href='{% url 'blog-create' %}' class='btn btn-default btn-small'>New Blog Post</a>
 </div>
 <div class='container col-md-5 pull-right'>
     <h1>Projects</h1>
-    <br />
-    <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
     <div class='container-center'>
         {% include 'stuff/_projects.html' %}
     </div>
+    <a href='{% url 'stuff-create'%}' class='btn btn-default btn-small'>New Project</a>
 </div>
 <script>
    $(document).ready(function(){

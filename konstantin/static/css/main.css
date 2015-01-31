@@ -17,6 +17,7 @@ body {
     background: #466368;
     background: linear-gradient(#648880, #293f50);	
     /* end */
+
     color:#ddd;
     height: 100%;
     margin: 0;
@@ -28,7 +29,7 @@ body {
     z-index: -1;
     position: absolute;
     overflow: hidden;
-    width: 30%;
+    width: 300px;
     height: 100%;	
     background-color:#333;
     //background-image: url('../img/computer_stock_2.png');
@@ -70,14 +71,14 @@ body {
 
 /* large buttons used frequently */
 .btn.btn-large.btn-default {
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 1px;
+    margin-left: -37px;
     margin-right: 20px;
     background-color: #222;
     border: 0px;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
-    border-radius: 7px;
+    border-radius: 2px;
     color: #ddd;
     height: 50px;
     width: 300px;
@@ -138,6 +139,7 @@ body {
 }
 
 .container-center {
+    color: #ccc;
     position: relative;
     overflow-y: scroll;
     margin-bottom: auto;
@@ -164,7 +166,7 @@ body {
 	width: 75%;
 	border-radius: 4px;
 	background-color: #ddd;
-	color: #333;
+	color: #ddd;
 	-moz-box-shadow: 0px 0px 0px 25px #fff;
 	-webkit-box-shadow: 0px 0px 0px 25px #fff;
 	box-shadow: 0px 5px 5px 1px #222;
@@ -200,6 +202,7 @@ body {
     margin-bottom: auto;
 }
 
+
 html {
     overflow: hidden;
     height: 100%;
@@ -208,7 +211,7 @@ html {
 }
 
 hr {
-	color: #666666;
+	color: #ddd;
 	height: 1px;
 }
 
@@ -281,7 +284,7 @@ hr {
 }
 .project {	
 	overflow-x: hidden;
-        min-height: 110px;
+    min-height: 110px;
 	margin: 5px;
 }
 
@@ -329,7 +332,7 @@ hr {
 }
 
 .well {
-    color: #000;
+    color: #ccc;
 }
 
 

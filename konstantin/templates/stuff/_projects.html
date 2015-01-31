@@ -1,10 +1,8 @@
 <div class='project'>
     {% if projects %}
-        <table class="table">
-            {% for project in projects %}
-                <tr>{% include 'stuff/_project.html' %}</tr>
-            {% endfor %}
-        </table>
+        {% for project in projects %}
+            {% include 'stuff/_project.html' %}
+        {% endfor %}
     {% else %}
         <h4>No projects have been created yet.</h4>
     {% endif %}
