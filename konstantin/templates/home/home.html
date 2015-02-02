@@ -1,9 +1,33 @@
 {% extends "base.html" %}
 {% block title %}Konstantin Farrell{% endblock %}
-
+{% block head %}
+<script>var widest = $(window).width();</script>
+<script src="{{ STATIC_URL }}js/layout.js"></script>
+{% endblock %}
 {% block content %}
 <div class='center-vertical center-lg text-center'>
 	<div class='welcome animated fadeInUpBig'>Hi, I'm Konstantin.</div>
+</div>
+<div class='latest center-vertical center-lg text-center'>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+    <p>Slightly more functional than a pooper scooper</p>
+</div>
+<div class='arrows center-vertical pull-left'>
+    <span class="glyphicon glyphicon-chevron-left"></span>
+</div>
+<div class='arrows center-vertical pull-right'>
+    <span class="glyphicon glyphicon-chevron-right"></span>
 </div>
 {% endblock %}
 
