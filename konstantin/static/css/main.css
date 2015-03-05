@@ -101,6 +101,14 @@ body {
     outline: none;
 }
 
+.card {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddd; 
+    color: #333;
+}
+
 .col-md-4 {
     color:#ddd;    
 }
@@ -220,6 +228,9 @@ hr {
     -webkit-animation-delay: 5s;
 }
 
+.latest{
+    position: absolute;
+}
 .main-container {
     overflow:hidden;
     position: absolute;

@@ -38,3 +38,6 @@ class ContactForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ContactForm, self).__init__(*args, **kwargs)
         kwargs['contact'] = kwargs.get('instance')
+
+    def save(self, *args, **kwargs):
+        super(ContactForm, self).save(*args, **kwargs)

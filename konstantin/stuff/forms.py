@@ -19,7 +19,7 @@ class ProjectForm(forms.ModelForm):
             'description',
             'date_completed',
             'team',
-            'site_url', 
+            'site_url',
             'role',
             'type',
             'current_state',

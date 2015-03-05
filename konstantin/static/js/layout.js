@@ -1,8 +1,10 @@
 $(document).ready(function(e){
+    $('.arrows').css("visibility", "hidden");
     $('.latest').css("marginLeft", widest + 100);
     $('.latest').css("marginTop", -100);
-    $('.arrows').css("z-index", -1);
     $('.arrows').css("color", "#ddd");
+    $('.arrows').css("position", "fixed");
+    $('.arrows.pull-right').css("marginLeft", widest - 60);
     $(setTimeout(
         function(){
             $('.welcome').animate({ "margin-left": -widest-500 }, 1000, "swing");
