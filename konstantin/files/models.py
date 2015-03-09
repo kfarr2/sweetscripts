@@ -90,6 +90,9 @@ class File(models.Model):
             # Running this twice should fix any issues with collisions since there are well over
             # 3x10^30 possibilities for ASCII strings of length 16 alone.
             self.slug = self.get_slug()
+            # Maybe once more just to be safe.
+            self.slug = self.get_slug()
+
         to_return = super(File, self).save(*args, **kwargs)
         # make the file searchable
         make_searchable(self)
@@ -97,7 +100,6 @@ class File(models.Model):
 
     def delete(self):
         # delete related objects
-        FileTag.objects.filter(file=self).delete()
         associated_files = AssociatedFile.objects.filter(main_file=self)
         associated_files.delete()
         try:

@@ -49,7 +49,6 @@ INSTALLED_APPS = (
     'bootstrap3_datetime',
     'celery',
     'coverage',
-    'model_mommy',
     'konstantin.bio',
     'konstantin.blog',
     'konstantin.home',

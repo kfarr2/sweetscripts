@@ -2,11 +2,13 @@ from django.db import models
 
 class Bio(models.Model):
     """
-    Bio
+    Bio - Technically the "about" section on the actual site.
+
     """
     bio_id = models.AutoField(primary_key=True)
     content = models.TextField()
     is_public = models.BooleanField(default=False)
+    avatar = models.ImageField(null=True)
 
     class Meta:
         db_table = "bio"
@@ -14,7 +16,8 @@ class Bio(models.Model):
 
 class Contact(models.Model):
     """
-    Contact
+    Contact - Contact data. Some of which will be used in the resume section.
+
     """
     # DB stuff
     contact_id = models.AutoField(primary_key=True)
@@ -29,7 +32,14 @@ class Contact(models.Model):
     # DOB
     birthday = models.DateField()
 
-    
+    # Address
+    address = models.CharField(max_length=255)
+
 
     class Meta:
         db_table = "contact"
+
+"""
+Should probably add a resume section around here.
+
+"""

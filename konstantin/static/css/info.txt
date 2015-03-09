@@ -1,4 +1,0 @@
-
-
-Background color gradient: #648880 - #293F50
-Base Color: #293F50

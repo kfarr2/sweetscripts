@@ -16,7 +16,7 @@ def list(request):
     """
 
     projects = Project.objects.all()
-    project_files = ProjectFile.objects.all()   
+    project_files = ProjectFile.objects.all()
     return render(request, 'stuff/list.html', {
         'projects': projects,
         'ProjectState': ProjectState,
