@@ -1,0 +1,30 @@
+{
+  "base": "static/semantic/",
+  "paths": {
+    "source": {
+      "config": "src/theme.config",
+      "definitions": "src/definitions/",
+      "site": "src/site/",
+      "themes": "src/themes/"
+    },
+    "output": {
+      "packaged": "static/semantic-out/",
+      "uncompressed": "static/semantic-out/components/",
+      "compressed": "static/semantic-out/components/",
+      "themes": "static/semantic-out/themes/"
+    },
+    "clean": "dist/"
+  },
+  "permission": false,
+  "rtl": "No",
+  "components": [
+    "tab",
+    "transition",
+    "video",
+    "api",
+    "form",
+    "state",
+    "visibility"
+  ],
+  "version": "1.11.4"
+}
