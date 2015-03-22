@@ -27,6 +27,7 @@ urlpatterns = patterns('',
     url(r'^stuff/admin/create/project/?$', stuff.create, name='stuff-create'),
     url(r'^stuff/admin/(?P<project_id>\d+)/?$', stuff.edit, name='stuff-edit'),
     url(r'^stuff/admin/(?P<project_id>\d+)/delete/?$', stuff.delete_project, name='stuff-delete-project'),
+    url(r'^random/?$', stuff.random, name='random'),
 
     # Contact
     url(r'^contact/?$', bio.contact, name='contact'),

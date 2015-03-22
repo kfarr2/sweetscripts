@@ -1,16 +1,16 @@
 <div class='ui card'>
     <div class='image'>
-    {% if user.is_authenticated and 'admin' in request.path %}
-        {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
-            <img class='pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=200 height=150 />
-        {% if project.site_url %}</a>{% endif %}
-    {% else %}
-        <div class='screenshot-container'>
+        {% if user.is_authenticated and 'admin' in request.path %}
             {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
-                <img class='screenshot pic pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=400 height=275 />
+                <img class='pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=200 height=150 />
             {% if project.site_url %}</a>{% endif %}
-        </div>
-    {% endif %}
+        {% else %}
+            <div class='screenshot-container'>
+                {% if project.site_url %}<a href='{{ project.site_url }}'>{% endif %}
+                    <img class='screenshot pic pull-right' src='{{ STATIC_URL }}img/screenshots/{{ project.screenshot }}' alt='' width=400 height=275 />
+                {% if project.site_url %}</a>{% endif %}
+            </div>
+        {% endif %}
     </div>
     <div class='content'>
         <div class='header'><h3>{{ project.name|title }}</h3></div>

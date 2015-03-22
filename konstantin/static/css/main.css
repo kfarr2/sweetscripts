@@ -78,14 +78,6 @@ body {
     outline: none;
 }
 
-.card {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #ddd;
-    color: #333;
-}
-
 .center-sm {
     margin-left: auto;
     margin-right: auto;
@@ -182,14 +174,10 @@ hr {
 	height: 1px;
 }
 
-#intro-text {
-    -webkit-animation-duration: 2s;
-    -webkit-animation-delay: 5s;
-}
-
 .latest{
     position: absolute;
 }
+
 .main-container {
     overflow:hidden;
     position: absolute;
