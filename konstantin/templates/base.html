@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+    <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}node_modules/semantic-ui/src/definitions/views/card.less" />
 	<script src="{{ STATIC_URL }}js/jquery-2.1.1.min.js"></script>
+    <script src="{{ STATIC_URL }}node_modules/gulp-less/node_modules/less/dist/less.js">
 	<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/doodles.css" />
-    <link rel="styleshoot" href="{{ STATIC_URL }}semantic/src/site/" />
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.custom.min.css" />
 	<title>{% block title %}{% endblock %}</title>
 	{% block head %}{% endblock %}

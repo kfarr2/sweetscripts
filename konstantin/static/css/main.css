@@ -78,6 +78,20 @@ body {
     outline: none;
 }
 
+.card {
+    background-color: #eee;
+    color: #333;
+    margin: 10px;
+    max-width: 400px;
+    max-height: 700px;
+    padding: 10px;
+}
+
+.card > h1 {
+    color: #111;
+
+}
+
 .center-sm {
     margin-left: auto;
     margin-right: auto;
@@ -247,7 +261,8 @@ hr {
 }
 
 .screenshot-container {
-    width: 400px;
+    margin: 0 auto;
+    width: 100%;
     height: 275px;
     overflow: hidden;
 }
@@ -276,12 +291,6 @@ hr {
 .td {
     max-width: 150px;
     word-wrap: break-word;
-}
-
-.welcome {
-    color: #ccc;
-    font-size: 56px;
-    text-shadfo 0px 0px 15px 20px #222;
 }
 
 .well {
