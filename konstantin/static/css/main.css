@@ -78,6 +78,20 @@ body {
     outline: none;
 }
 
+.bio {
+    color: #fff;
+    border-radius: 2px;
+    font-size: 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 5px;
+}
+
+.bio-header {
+    color: #eee;
+    font-size: 48px;
+}
+
 .card {
     background-color: #eee;
     color: #333;

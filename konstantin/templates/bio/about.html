@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% block title %} Who is this guy?{% endblock %}
-<script src='{{ STATIC_URL }}js/strapdown.js'></script>
+{% block head %}
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+{% endblock %}
 {% block content %}
-<div class='col-md-4'>
-</div>
-<div class='col-md-8 container center-vertical'>
+
+<div class="container">
+    <h1 class="bio-header text-center">Konstantin Farrell</h1>
+    <hr />
+    <div class='bio'>
     {% if bio %}
-            <xmp>{{ bio.content }}</xmp>
+        {{ bio.content }}
     {% endif %}
+    </div>
 </div>
 {% endblock %}

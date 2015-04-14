@@ -7,7 +7,7 @@ if(system.args !== null){
         address = 'http://' + address;
     }
 }
-page.viewportSize = { width: 1000, height: 800 };
+page.viewportSize = { width: 800, height: 500 };
 page.open(address, function() {
 
     var name = 'konstantin/static/img/screenshots/'+ address.substring(address.lastIndexOf("//")+2, address.lastIndexOf("/")) + '.png';

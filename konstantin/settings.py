@@ -131,6 +131,8 @@ TEMPLATE_DIRS = (
 	here("utils/templates"),
 )
 
+SEMANTIC_URL = ROOT("static/node_modules/semantic-ui/src/")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = True
