@@ -1,7 +1,7 @@
 Django==1.7.1
 Jinja2==2.7.3
 MarkupSafe==0.23
-Pillow==2.6.1
+Pillow==8.1.1
 PyMySQL==0.6.2
 South==1.0.1
 amqp==1.4.6
